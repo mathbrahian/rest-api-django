@@ -35,7 +35,7 @@ def note(request):
 def note_id(request, id):
     try:
         note = Note.objects.get(pk=id)
-    except note.DoesNotExist:
+    except Note.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
